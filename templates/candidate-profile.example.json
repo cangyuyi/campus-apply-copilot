@@ -1,0 +1,99 @@
+{
+  "_comment": "示例档案（全部为脱敏占位符）。复制到仓库外使用，切勿提交真实信息。",
+
+  "name": "张三",
+  "gender": "男",
+  "phone": "13800000000",
+  "email": "you@example.com",
+  "birth": "2004-01-01",
+  "idCard": "3301xxxxxxxxxxxxxx",
+
+  "ethnicity": "汉族",
+  "politicalStatus": "共青团员",
+  "hometown": "浙江省杭州市XX市",
+  "address": "浙江省杭州市XX区",
+  "maritalStatus": "未婚",
+
+  "degree": "本科",
+  "school": "XX大学",
+  "major": "XX专业",
+  "eduStart": "2023-09",
+  "eduEnd": "2027-06",
+  "graduation": "2027-06",
+  "gpa": "3.5/4.0（专业前10%）",
+  "awards": "校级三等奖学金",
+  "college": "XX学院",
+  "educationType": "统招全日制",
+
+  "expectedCity": "杭州",
+  "expectedSalary": "面议",
+  "availableDate": "2027-07",
+  "health": "良好",
+  "englishLevel": "CET-4",
+
+  "emergencyContact": {
+    "name": "李四",
+    "relation": "姐弟",
+    "phone": "13900000000"
+  },
+
+  "familyInfo": "仅在网申系统必填时填写，不要出现在简历或对外材料中。",
+
+  "resumeFiles": {
+    "AI产品经理": "/absolute/path/to/resume-ai-pm.pdf",
+    "通用版": "/absolute/path/to/resume-general.pdf"
+  },
+
+  "internships": [
+    {
+      "company": "某某科技有限公司",
+      "department": "AI产品部",
+      "title": "AI产品实习生",
+      "start": "2026-03",
+      "end": "2026-06",
+      "location": "北京",
+      "highlights": "一句话概括的核心成果，含量化数字。",
+      "description": "网申长文本版（200-350字，用简历原文完整版，不要压缩）。"
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "某某平台",
+      "role": "联合创始人 / 产品负责人",
+      "start": "2026-03",
+      "end": "至今",
+      "link": "https://example.com",
+      "highlights": "核心成果，含量化数字。",
+      "description": "项目描述（250-450字），说明：做了什么、为什么这么做、结果如何。"
+    }
+  ],
+
+  "campusExperience": [
+    {
+      "org": "XX大学 学生会",
+      "role": "某部部长",
+      "start": "2024-06",
+      "end": "2025-06",
+      "description": "这段经历适合填在「学生工作 / 社会实践 / 社团经历」字段。"
+    }
+  ],
+
+  "certificates": "普通话水平测试等级证书、机动车驾驶证",
+  "languages": [
+    { "type": "英语", "level": "日常会话", "exam": "CET-4" }
+  ],
+
+  "skills": "技能清单，用顿号分隔。",
+
+  "selfDescription": "自我评价（250-400字）。建议结构：我是谁 + 我用结果补上了什么短板 + 我的工作方法 + 我的规划。不要写形容词堆砌，要写可验证的事实和数字。",
+
+  "portfolio": [
+    { "name": "项目名称（开源）", "link": "https://github.com/you/repo" }
+  ],
+
+  "notes": {
+    "privacyFields": "身份证号、家庭电话等敏感信息仅在网申系统必填时填写。",
+    "dataAttribution": "量化结果必须写清是个人成果还是团队盘子，例如「团队盘子对应单月增量 GMV 约 X 万元」。"
+  }
+}

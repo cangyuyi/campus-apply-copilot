@@ -1,0 +1,33 @@
+# ── 个人信息（绝对不要提交）──
+candidate-profile.json
+candidate-profile*.json
+!templates/candidate-profile.example.json
+*.local.json
+
+# 投递台账（含真实公司与进度）
+*投递*.xlsx
+*总表*.xlsx
+*跟踪表*.xlsx
+*application-log*.csv
+!templates/application-log.example.csv
+
+# 简历与作品集（含真实个人信息）
+*.pdf
+*.docx
+*.doc
+!docs/**/*.pdf
+resumes/
+output/
+exports/
+
+# 本地服务与临时文件
+corssrv.py
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.idea/
+.vscode/
