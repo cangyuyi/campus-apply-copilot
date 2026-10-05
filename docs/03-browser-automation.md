@@ -135,6 +135,8 @@ nodeRepl.emitImage(await tab.screenshot());
 
 ---
 
+![定位的七层降级](../assets/degradation.png)
+
 ## 四、定位的七层降级
 
 ```

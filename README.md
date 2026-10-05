@@ -8,6 +8,8 @@
 
 ---
 
+![端到端工作流](assets/workflow.png)
+
 ## 核心设计：为什么是"人机协作"而不是"全自动"
 
 做这个项目之前，先想清楚三件事：
@@ -44,6 +46,8 @@
 | **Element UI 系** | `el-*` 类名（多数自建站与老版门户） | [docs](docs/02-platforms/element-ui.md) |
 | **招聘门户（51job/hotjob/智联等）** | `hotjob.cn`、`51job.com`、`zhaopin.com` | [docs](docs/02-platforms/custom-sites.md) |
 | **企业自建站** | 各家自研，组件风格各异 | [docs](docs/02-platforms/custom-sites.md) |
+
+![平台识别决策树](assets/platform-map.png)
 
 ## 快速开始
 
@@ -91,10 +95,16 @@ bash scripts/check-desensitize.sh .
 ├── CONTRIBUTING.md                # 贡献规范 + 脱敏要求
 ├── LICENSE                        # MIT
 ├── .github/ISSUE_TEMPLATE/        # 平台问题 / 数据事故 两个模板
+├── assets/                        # 示意图（由 scripts/make-diagrams.py 生成）
+│   ├── workflow.png               # 端到端工作流：人机分工
+│   ├── degradation.png            # 定位的七层降级
+│   ├── dom-anatomy.png            # DOM 解剖：为什么直调 setter 会炸
+│   └── platform-map.png           # 平台识别决策树
 ├── scripts/                       # 可直接运行的工具
 │   ├── cors-upload-server.py      # 上传用的本地 CORS 文件服务
 │   ├── cjk_pdf.py                 # 中文 PDF 排版引擎（含 demo 与验收检查）
 │   ├── tracking.py                # 投递台账读写 / 校验 / 重建
+│   ├── make-diagrams.py           # 生成 assets/ 下的示意图（完全原创，非截图）
 │   └── check-desensitize.sh       # 提交前的脱敏扫描
 ├── docs/
 │   ├── 00-workflow.md             # 端到端 Runbook（阶段 0-7，标注 🤖/👤）

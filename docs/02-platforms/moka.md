@@ -33,6 +33,8 @@ URL 特征：`app.mokahr.com/campus-recruitment/<company>/<id>`
 
 ---
 
+![DOM 解剖：为什么直调 setter 会炸](../../assets/dom-anatomy.png)
+
 ## 二、⛔ 头号铁律：禁止直调下拉
 
 ### 现象
