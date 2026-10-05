@@ -2,7 +2,7 @@
 
 > 让 AI Agent 替你完成校招网申的重复劳动 —— 一套经过 **60+ 家真实投递** 验证的人机协作 SOP
 
-中国大陆的秋招网申是一件高度重复、平台极其碎片化的事：一家公司一套系统，同一份简历要在十几个不同框架的表单里重填一遍。一个求职者投 50 家，可能要填 2000+ 个字段。
+中国大陆的秋招网申是一件高度重复、平台极其碎片化的事：一家公司一套系统，同一份简历要在十几个不同框架的表单里重填一遍。一个求职者投 60 家，可能要填 2000+ 个字段。
 
 这个项目把我用 AI Agent 完成 60+ 家投递的全过程**沉淀成一套可复用的方法论 + 平台知识库 + 工程技巧**。它不是"自动投递脚本"，而是一套**人机分工协议**：Agent 负责所有确定性劳动（找岗、核岗、填表、校验、记账），人只做两件机器做不了的事 —— **登录**和**按下最终提交**。
 
@@ -48,34 +48,71 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/<you>/campus-apply-copilot.git
+git clone https://github.com/cangyuyi/campus-apply-copilot.git
 cd campus-apply-copilot
 cp templates/candidate-profile.example.json ~/candidate-profile.json
 # 编辑 ~/candidate-profile.json，填入你的信息与简历路径
 ```
 
-然后阅读 [`docs/01-methodology.md`](docs/01-methodology.md)，按顺序执行工作流。
+然后阅读 [`docs/00-workflow.md`](docs/00-workflow.md)，按 Runbook 逐阶段执行。
+
+### 可直接运行的工具
+
+`scripts/` 里是文档中反复用到的三段代码，做成了开箱即用：
+
+```bash
+# ① 上传用的本地服务（解决内置浏览器不支持文件选择器）
+python3 scripts/cors-upload-server.py --dir ~/resumes
+# → serving ... at http://127.0.0.1:8731/
+
+# ② 中文 PDF 排版引擎（绕过 PyMuPDF 的三个静默失败）
+python3 scripts/cjk_pdf.py          # 生成 demo.pdf 并自动做溢出检查
+
+# ③ 投递台账读写与校验（含序号连续性断言）
+python3 scripts/tracking.py init    ~/applications.xlsx
+python3 scripts/tracking.py append  ~/applications.xlsx
+python3 scripts/tracking.py verify  ~/applications.xlsx
+python3 scripts/tracking.py rebuild ~/applications.xlsx ~/tracking.xlsx
+```
+
+**提交前必跑**脱敏检查：
+
+```bash
+bash scripts/check-desensitize.sh .
+```
+
+它会扫手机号、身份证、邮箱、本地路径和未替换的占位符，有命中就返回非零退出码。
 
 ## 目录结构
 
 ```
 .
 ├── README.md
+├── CONTRIBUTING.md                # 贡献规范 + 脱敏要求
+├── LICENSE                        # MIT
+├── .github/ISSUE_TEMPLATE/        # 平台问题 / 数据事故 两个模板
+├── scripts/                       # 可直接运行的工具
+│   ├── cors-upload-server.py      # 上传用的本地 CORS 文件服务
+│   ├── cjk_pdf.py                 # 中文 PDF 排版引擎（含 demo 与验收检查）
+│   ├── tracking.py                # 投递台账读写 / 校验 / 重建
+│   └── check-desensitize.sh       # 提交前的脱敏扫描
 ├── docs/
+│   ├── 00-workflow.md             # 端到端 Runbook（阶段 0-7，标注 🤖/👤）
 │   ├── 01-methodology.md          # 核心方法论：筛岗纪律、校验驱动、止损红线
 │   ├── 02-platforms/              # 平台知识库（按 ATS 家族分类）
-│   │   ├── README.md              # 平台识别速查表
+│   │   ├── README.md              # 平台识别速查表 + 七层降级链路
 │   │   ├── beisen.md              # 北森：cmp 直调法 / 新版 fiber 取选项
 │   │   ├── moka.md                # Moka：禁止 setter 污染 store
 │   │   ├── feishu.md              # 飞书 ATS：period picker / 虚拟列表陷阱
 │   │   ├── element-ui.md          # Element UI：el-upload 等
-│   │   └── custom-sites.md        # 企业自建站
+│   │   └── custom-sites.md        # 企业自建站（6 个实测案例）
 │   ├── 03-browser-automation.md   # 浏览器自动化工程技巧（含文件上传方案）
 │   ├── 04-data-management.md      # 投递台账设计（含真实踩过的数据事故）
 │   └── 05-document-generation.md  # 简历/作品集 PDF 生成的静默失败
 └── templates/
     ├── candidate-profile.example.json
-    └── application-log.example.csv
+    ├── application-log.example.csv
+    └── open-ended-questions.md    # 开放性问题素材库（六类题型拆解）
 ```
 
 ## 三条最有价值的经验

@@ -41,7 +41,7 @@
 | **Element UI** | `el-upload` 的 `input[type=file]` 是 `display:none`，且会重置 | 见 [element-ui.md](element-ui.md) |
 | **企业自建** | 组件行为不可预测，同一平台不同公司实现不同 | 见 [custom-sites.md](custom-sites.md) |
 
-## 通用降级链路
+## 通用降级链路（七层）
 
 不管哪套系统，填不进去时按这个顺序降级：
 
