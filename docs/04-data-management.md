@@ -202,7 +202,7 @@ cp "总表.xlsx" "/tmp/bak_$(date +%s)_总表.xlsx"
   "公司": "某公司",
   "岗位": "AI产品经理（杭州）",
   "日期": "2026-10-02",
-  "渠道": "自建网申 campus.example.com（candidateId=810686285）",
+  "渠道": "自建网申 campus.example.com（candidateId=800000002）",
   "备注": "岗位要求「Prompt/Agent/RAG + 手搓 demo 经验」，与项目经历高度对口"
 }
 ```

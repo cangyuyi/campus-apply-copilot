@@ -4,6 +4,9 @@ candidate-profile*.json
 !templates/candidate-profile.example.json
 *.local.json
 
+# 本地脱敏黑名单（含真实项目名/公司名，只留本地）
+*.local.txt
+
 # 投递台账（含真实公司与进度）
 *投递*.xlsx
 *总表*.xlsx

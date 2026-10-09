@@ -91,7 +91,7 @@ function getPhoenixProps(label) {
 | 字段 | cmp_name | 正确取值示例 |
 |---|---|---|
 | 民族 | `RecruitmentPersonProfile_Nation` | `{value:'1', text:'汉族'}` |
-| 籍贯 | `RecruitmentPersonProfile_NativeArea` | `{value:'330182', text:'浙江省杭州市建德市'}` |
+| 籍贯 | `RecruitmentPersonProfile_NativeArea` | `{value:'330199', text:'浙江省杭州市XX区'}` |
 | 现居住地 | `RecruitmentPersonProfile_LivingArea` | 同上格式（省市县全路径） |
 | 政治面貌 | `RecruitmentPersonProfile_Polity` | `{value:'3', text:'共青团员'}` |
 | 婚否 | `RecruitmentPersonProfile_WedState` | `{value:'1', text:'未婚'}` |
